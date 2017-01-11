@@ -1,0 +1,25 @@
+cluster:
+  name: ${CLUSTER_NAME}
+
+node.data: ${NODE_DATA}
+node.master: ${NODE_MASTER}
+
+network.host: 0.0.0.0
+
+cloud:
+  kubernetes:
+    service: ${SERVICE}
+    namespace: ${KUBERNETES_NAMESPACE}
+
+discovery:
+  zen:
+    hosts_provider: kubernetes
+    minimum_master_nodes: ${NUMBER_OF_MASTERS}
+
+plugin.mandatory: discovery-kubernetes
+
+#xpack.graph.enabled: false
+#xpack.security.enabled: false
+#xpack.watcher.enabled: false
+#xpack.monitoring.enabled: true
+
